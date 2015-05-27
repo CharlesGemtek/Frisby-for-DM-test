@@ -11,6 +11,7 @@ describe('DM server API Test Suite', function() {
         .toss();
 
     //Test get_firmware_list API with no key option
+
     frisby.create('Get Firmware List')
         .get('https://localhost:8080/web/v2/client/get_firmware_list',
             { strictSSL: false})
