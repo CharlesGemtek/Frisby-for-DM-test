@@ -75,33 +75,166 @@ describe('DM server API Test Suite', function() {
 
     //Test Get Firmware (for old firmware) with model_name
     frisby.create('Get Firmware (for old firmware) from DM server')
-    .get('https://localhost:443/dm/v1/fota/stable?model_name='+test_ModelName,
-        { strictSSL: false})
-    .expectStatus(200)
-    .expectHeaderContains('content-type', 'application/json; charset=utf-8')
-    .expectJSONTypes({
-        'version' : String,
-        'url' : String,
-        'size' : Number,
-        'checksum' : String,
-        'reset_default' : String,
-        'desc' : String
-    })
-    .toss();
+        .get('https://localhost:443/dm/v1/fota/stable?model_name='+test_ModelName,
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'application/json; charset=utf-8')
+        .expectJSONTypes({
+            'version' : String,
+            'url' : String,
+            'size' : Number,
+            'checksum' : String,
+            'reset_default' : String,
+            'desc' : String
+        })
+        .toss();
 
     //Test Get Firmware (for old firmware) with model_name empty
     frisby.create('Get Firmware (for old firmware) from DM server')
-    .get('https://localhost:443/dm/v1/fota/stable?model_name=',
-        { strictSSL: false})
-    .expectStatus(400)
-    .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
-    .toss();
+        .get('https://localhost:443/dm/v1/fota/stable?model_name=',
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
 
     //Test Get Firmware (for old firmware) with no such model_name
     frisby.create('Get Firmware (for old firmware) from DM server')
-    .get('https://localhost:443/dm/v1/fota/stable?model_name=00000000000',
-        { strictSSL: false})
-    .expectStatus(500)
-    .toss();
+        .get('https://localhost:443/dm/v1/fota/stable?model_name=00000000000',
+            { strictSSL: false})
+        .expectStatus(500)
+        .toss();
+
+    //Test Get Firmware V2 with model_name (WEB)
+    frisby.create('Get Firmware V2 from WEB server')
+        .get('https://localhost:8080/web/v2/fota/stable?model_name='+test_ModelName,
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/html; charset=utf-8')
+        .expectJSONTypes({
+            'version' : String,
+            'url' : String,
+            'size' : Number,
+            'checksum' : String,
+            'reset_default' : String,
+            'desc' : String
+        })
+        .toss();
+
+    //Test Get Firmware V2 with model_name empty (WEB)
+    frisby.create('Get Firmware V2 from WEB server')
+        .get('https://localhost:8080/web/v2/fota/stable?model_name=',
+            { strictSSL: false})
+        .expectStatus(500)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
+
+    //Test Get Firmware V2 with no such model_name (WEB)
+    frisby.create('Get Firmware V2 from WEB server')
+        .get('https://localhost:8080/web/v2/fota/stable?model_name=00000000000',
+            { strictSSL: false})
+        .expectStatus(500)
+        .toss();
+
+    //Test Get Firmware V2 with version parameter (WEB)
+    frisby.create('Get Firmware V2 from WEB server')
+        .get('https://localhost:8080/web/v2/fota/stable?model_name='+test_ModelName+'&version=1',
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/html; charset=utf-8')
+        .expectJSONTypes({
+            'version' : String,
+            'url' : String,
+            'size' : Number,
+            'checksum' : String,
+            'reset_default' : String,
+            'desc' : String
+        })
+        .toss();
+
+    //Test Get Firmware V2 with empty version parameter (WEB)
+    frisby.create('Get Firmware V2 from WEB server')
+        .get('https://localhost:8080/web/v2/fota/stable?model_name='+test_ModelName+'&version=',
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/html; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Get Firmware V2 with error version parameter (WEB)
+    frisby.create('Get Firmware V2 from WEB server')
+        .get('https://localhost:8080/web/v2/fota/stable?model_name='+test_ModelName+'&version=-1',
+            { strictSSL: false})
+        .expectStatus(500)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+
+    //Test Get Firmware V2 with model_name (DM)
+    frisby.create('Get Firmware V2 from DM server')
+        .get('https://localhost:443/dm/v2/fota/stable?model_name='+test_ModelName,
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'application/json; charset=utf-8')
+        .expectJSONTypes({
+            'version' : String,
+            'url' : String,
+            'size' : Number,
+            'checksum' : String,
+            'reset_default' : String,
+            'desc' : String
+        })
+        .toss();
+
+    //Test Get Firmware V2 with model_name empty (DM)
+    frisby.create('Get Firmware V2 from DM server')
+        .get('https://localhost:443/dm/v2/fota/stable?model_name=',
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
+
+    //Test Get Firmware V2 with no such model_name (DM)
+    frisby.create('Get Firmware V2 from DM server')
+        .get('https://localhost:443/dm/v2/fota/stable?model_name=00000000000',
+            { strictSSL: false})
+        .expectStatus(500)
+        .toss();
+
+    //Test Get Firmware V2 with version parameter (DM)
+    frisby.create('Get Firmware V2 from DM server')
+        .get('https://localhost:443/dm/v2/fota/stable?model_name='+test_ModelName+'&version=1',
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'application/json; charset=utf-8')
+        .expectJSONTypes({
+            'version' : String,
+            'url' : String,
+            'size' : Number,
+            'checksum' : String,
+            'reset_default' : String,
+            'desc' : String
+        })
+        .toss();
+
+    //Test Get Firmware V2 with empty version parameter (DM)
+    frisby.create('Get Firmware V2 from DM server')
+        .get('https://localhost:443/dm/v2/fota/stable?model_name='+test_ModelName+'&version=',
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'application/json; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Get Firmware V2 with error version parameter (DM)
+    frisby.create('Get Firmware V2 from DM server')
+        .get('https://localhost:443/dm/v2/fota/stable?model_name='+test_ModelName+'&version=-1',
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+
 
 });
