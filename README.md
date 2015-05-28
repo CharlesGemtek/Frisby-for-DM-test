@@ -1,6 +1,6 @@
 # Frisby-for-DM-test
 
-Run DM in localhost with port 8080 then start frisby to test.
+Run DM/WEB server in localhost with port 443/8080 and then start frisby to test.
 
 command:
 ```sh

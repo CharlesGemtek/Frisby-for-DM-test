@@ -157,7 +157,6 @@ describe('DM server API Test Suite', function() {
             { strictSSL: false})
         .expectStatus(200)
         .expectHeaderContains('content-type', 'text/html; charset=utf-8')
-        .inspectBody()
         .toss();
 
     //Test Get Firmware V2 with error version parameter (WEB)
@@ -166,7 +165,6 @@ describe('DM server API Test Suite', function() {
             { strictSSL: false})
         .expectStatus(500)
         .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
-        .inspectBody()
         .toss();
 
 
@@ -223,7 +221,6 @@ describe('DM server API Test Suite', function() {
             { strictSSL: false})
         .expectStatus(200)
         .expectHeaderContains('content-type', 'application/json; charset=utf-8')
-        .inspectBody()
         .toss();
 
     //Test Get Firmware V2 with error version parameter (DM)
@@ -232,7 +229,6 @@ describe('DM server API Test Suite', function() {
             { strictSSL: false})
         .expectStatus(400)
         .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
-        .inspectBody()
         .toss();
 
     //Test Upload Firmware (WEB)
@@ -265,9 +261,9 @@ describe('DM server API Test Suite', function() {
             })
         .expectStatus(200)
         .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
-        .inspectBody()
         .toss();
 
+    //Test Upload Firmware (DM)
     frisby.create('Upload Firmware from DM server')
         .post('https://localhost:443/dm/v2/fota/stable',form,
             {
@@ -279,7 +275,36 @@ describe('DM server API Test Suite', function() {
             })
         .expectStatus(200)
         .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
+
+    //Test Delete Firmware (WEB)
+    frisby.create('Delete Firmware from WEB server')
+        .delete('https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST4&version=4',null,
+            {strictSSL: false })
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
         .inspectBody()
         .toss();
 
+    frisby.create('Delete Firmware from WEB server with error model_name')
+        .delete('https://localhost:8080/web/v2/fota/stable?model_name=0000000&version=4',null,
+            {strictSSL: false })
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
+
+    //Test Delete Firmware (DM)
+    frisby.create('Delete Firmware from DM server')
+        .delete('https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST1&version=1',null,
+            {strictSSL: false })
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
+
+    frisby.create('Delete Firmware from DM server with error model_name')
+        .delete('https://localhost:443/dm/v2/fota/stable?model_name=000000000&version=2',null,
+            {strictSSL: false })
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
 });
