@@ -235,6 +235,51 @@ describe('DM server API Test Suite', function() {
         .inspectBody()
         .toss();
 
+    //Test Upload Firmware (WEB)
+    var fs = require('fs');
+    var path = require('path');
+    var FormData = require('form-data');
+    var filePath = __dirname+'/dm_test3';
+    var form = new FormData();
+    var form_info = {
+        "model_name" : "DM_TEST5",
+        "version" : "5",
+        "customer" : "Charles5",
+        "description" : "For test5",
+        "reset_default" : "true"
+    }
+    form.append('firmware_info', JSON.stringify(form_info));
+    form.append('file', fs.createReadStream(filePath), {
+        // we need to set the knownLength so we can call  form.getLengthSync()
+        knownLength: fs.statSync(filePath).size
+    });
 
+    frisby.create('Upload Firmware from WEB server')
+        .post('https://localhost:8080/web/v2/fota/stable',form,
+            {
+                strictSSL: false,
+                headers: {
+                  'content-type': 'multipart/form-data; boundary=' + form.getBoundary(),
+                  'content-length': form.getLengthSync()
+                }
+            })
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    frisby.create('Upload Firmware from DM server')
+        .post('https://localhost:443/dm/v2/fota/stable',form,
+            {
+                strictSSL: false,
+                headers: {
+                  'content-type': 'multipart/form-data; boundary=' + form.getBoundary(),
+                  'content-length': form.getLengthSync()
+                }
+            })
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
 
 });
