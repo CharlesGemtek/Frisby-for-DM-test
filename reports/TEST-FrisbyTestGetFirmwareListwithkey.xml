@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Frisby Test: Get Firmware List with key " errors="0" tests="1" failures="0" time="0.022" timestamp="2015-05-29T10:51:56">
+  <testcase classname="Frisby Test: Get Firmware List with key " name="
+	[ GET https://localhost:443/dm/v2/client/get_firmware_list?key=DM_TEST1 ]" time="0.022"></testcase>
+</testsuite>
+</testsuites>

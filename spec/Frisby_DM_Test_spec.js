@@ -237,11 +237,16 @@ describe('DM server API Test Suite', function() {
     var FormData = require('form-data');
     var filePath = __dirname+'/dm_test3';
     var form = new FormData();
+    var count = 9
+    var ModelName = "DM_TEST",
+        customer = "Charles",
+        description = "For test"
+
     var form_info = {
-        "model_name" : "DM_TEST5",
-        "version" : "5",
-        "customer" : "Charles5",
-        "description" : "For test5",
+        "model_name" : ModelName+count,
+        "version" : count,
+        "customer" : customer+count,
+        "description" : description+count,
         "reset_default" : "true"
     }
     form.append('firmware_info', JSON.stringify(form_info));
@@ -279,15 +284,24 @@ describe('DM server API Test Suite', function() {
 
     //Test Delete Firmware (WEB)
     frisby.create('Delete Firmware from WEB server')
-        .delete('https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST4&version=4',null,
+        .delete('https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST9&version=9',null,
             {strictSSL: false })
         .expectStatus(200)
         .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
         .inspectBody()
         .toss();
 
+    //Test Delete Firmware (WEB) with error model_name
     frisby.create('Delete Firmware from WEB server with error model_name')
-        .delete('https://localhost:8080/web/v2/fota/stable?model_name=0000000&version=4',null,
+        .delete('https://localhost:8080/web/v2/fota/stable?model_name=0000000&version=5',null,
+            {strictSSL: false })
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
+
+    //Test Delete Firmware (WEB) with error version
+    frisby.create('Delete Firmware from WEB server')
+        .delete('https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST9&version=-1',null,
             {strictSSL: false })
         .expectStatus(400)
         .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
@@ -295,16 +309,117 @@ describe('DM server API Test Suite', function() {
 
     //Test Delete Firmware (DM)
     frisby.create('Delete Firmware from DM server')
-        .delete('https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST1&version=1',null,
+        .delete('https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST9&version=9',null,
             {strictSSL: false })
         .expectStatus(200)
         .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
         .toss();
 
+    //Test Delete Firmware (DM) with error model_name
     frisby.create('Delete Firmware from DM server with error model_name')
         .delete('https://localhost:443/dm/v2/fota/stable?model_name=000000000&version=2',null,
             {strictSSL: false })
         .expectStatus(400)
         .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
+
+    //Test Delete Firmware (DM) with error version
+    frisby.create('Delete Firmware from DM server')
+        .delete('https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST9&version=-1',null,
+            {strictSSL: false })
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .toss();
+
+
+    //Test Get Device Firmware ; need test_tool to simulate device operation before using
+    frisby.create('Get Device Firmware from WEB server')
+        .get('https://localhost:8080/web/v2/fota/device/firmware?gid=1,2,3&from=10,20&size=5,5&socket_id=DE7itWKqUTokJT0mAAAA',
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Get Device Firmware with error socket_id
+    frisby.create('Get Device Firmware from WEB server')
+        .get('https://localhost:8080/web/v2/fota/device/firmware?gid=1,2,3&from=10,20&size=5,5&socket_id=DE7itWKqUTokJT0mAAAA000',
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Get Device Firmware
+    frisby.create('Get Device Firmware from DM server')
+        .get('https://localhost:443/dm/v2/fota/device/firmware?gid=1,2,3&from=10,20&size=5,5&socket_id=DE7itWKqUTokJT0mAAAA',
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Get Device Firmware with error socket_id
+    frisby.create('Get Device Firmware from DM server')
+        .get('https://localhost:443/dm/v2/fota/device/firmware?gid=1,2,3&from=10,20&size=5,5&socket_id=DE7itWKqUTokJT0mAAAA000',
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+
+    //Test Update Device Firmware ; need test_tool to simulate device operation before using
+    frisby.create('Update Device Firmware from WEB server')
+        .put('https://localhost:8080/web/v2/fota/device/firmware?gid=1,2,3&from=10,20&size=5,5&socket_id=DE7itWKqUTokJT0mAAAA',null,
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Update Device Firmware with error socket_id
+    frisby.create('Update Device Firmware from WEB server')
+        .put('https://localhost:8080/web/v2/fota/device/firmware?gid=1,2,3&from=10,20&size=5,5&socket_id=DE7itWKqUTokJT0mAAAA000',null,
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Update Device Firmware with empty gid
+    frisby.create('Update Device Firmware from WEB server')
+        .put('https://localhost:8080/web/v2/fota/device/firmware?gid=&from=&size=&socket_id=',null,
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Update Device Firmware ; need test_tool to simulate device operation before using
+    frisby.create('Update Device Firmware from DM server')
+        .put('https://localhost:443/dm/v2/fota/device/firmware?gid=1,2,3&from=10,20&size=5,5&socket_id=DE7itWKqUTokJT0mAAAA',null,
+            { strictSSL: false})
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Update Device Firmware with error socket_id
+    frisby.create('Update Device Firmware from DM server')
+        .put('https://localhost:443/dm/v2/fota/device/firmware?gid=1,2,3&from=10,20&size=5,5&socket_id=DE7itWKqUTokJT0mAAAA000',null,
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
+        .toss();
+
+    //Test Update Device Firmware with empty gid
+    frisby.create('Update Device Firmware from DM server')
+        .put('https://localhost:443/dm/v2/fota/device/firmware?gid=&from=&size=&socket_id=',null,
+            { strictSSL: false})
+        .expectStatus(400)
+        .expectHeaderContains('content-type', 'text/plain; charset=utf-8')
+        .inspectBody()
         .toss();
 });

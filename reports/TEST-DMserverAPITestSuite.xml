@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="DM server API Test Suite" errors="0" tests="0" failures="0" time="0" timestamp="2015-05-29T10:51:56">
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Device Manager IP" errors="0" tests="1" failures="0" time="0.079" timestamp="2015-05-29T10:51:23">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Device Manager IP" name="
+	[ GET https://localhost:8080/web/v2/client/get_dm_ip ]" time="0.074"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware List without key" errors="0" tests="1" failures="0" time="0.051" timestamp="2015-05-29T10:51:23">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware List without key" name="
+	[ GET https://localhost:8080/web/v2/client/get_firmware_list ]" time="0.05"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware List without key" errors="0" tests="1" failures="0" time="0.032" timestamp="2015-05-29T10:51:23">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware List without key" name="
+	[ GET https://localhost:443/dm/v2/client/get_firmware_list ]" time="0.032"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware (for old firmware) from DM server" errors="0" tests="1" failures="0" time="0.03" timestamp="2015-05-29T10:51:23">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware (for old firmware) from DM server" name="
+	[ GET https://localhost:443/dm/v1/fota/stable?model_name=DM_TEST1 ]" time="0.03"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware (for old firmware) from DM server" errors="0" tests="1" failures="0" time="0.037" timestamp="2015-05-29T10:51:23">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware (for old firmware) from DM server" name="
+	[ GET https://localhost:443/dm/v1/fota/stable?model_name= ]" time="0.037"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware (for old firmware) from DM server" errors="0" tests="1" failures="0" time="5.012" timestamp="2015-05-29T10:51:23">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware (for old firmware) from DM server" name="
+	[ GET https://localhost:443/dm/v1/fota/stable?model_name=00000000000 ]" time="5.012"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" errors="0" tests="1" failures="0" time="0.045" timestamp="2015-05-29T10:51:28">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" name="
+	[ GET https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST1 ]" time="0.045"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" errors="0" tests="1" failures="0" time="0.034" timestamp="2015-05-29T10:51:28">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" name="
+	[ GET https://localhost:8080/web/v2/fota/stable?model_name= ]" time="0.034"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" errors="0" tests="1" failures="0" time="5.006" timestamp="2015-05-29T10:51:28">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" name="
+	[ GET https://localhost:8080/web/v2/fota/stable?model_name=00000000000 ]" time="5.006"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" errors="0" tests="1" failures="0" time="0.032" timestamp="2015-05-29T10:51:33">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" name="
+	[ GET https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST1&amp;version=1 ]" time="0.032"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" errors="0" tests="1" failures="0" time="0.023" timestamp="2015-05-29T10:51:33">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" name="
+	[ GET https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST1&amp;version= ]" time="0.023"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" errors="0" tests="1" failures="0" time="0.034" timestamp="2015-05-29T10:51:33">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from WEB server" name="
+	[ GET https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST1&amp;version=-1 ]" time="0.034"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" errors="0" tests="1" failures="0" time="0.022" timestamp="2015-05-29T10:51:33">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" name="
+	[ GET https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST1 ]" time="0.022"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" errors="0" tests="1" failures="0" time="0.024" timestamp="2015-05-29T10:51:33">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" name="
+	[ GET https://localhost:443/dm/v2/fota/stable?model_name= ]" time="0.024"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" errors="0" tests="1" failures="0" time="5.003" timestamp="2015-05-29T10:51:33">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" name="
+	[ GET https://localhost:443/dm/v2/fota/stable?model_name=00000000000 ]" time="5.003"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" errors="0" tests="1" failures="0" time="0.021" timestamp="2015-05-29T10:51:38">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" name="
+	[ GET https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST1&amp;version=1 ]" time="0.02"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" errors="0" tests="1" failures="0" time="0.021" timestamp="2015-05-29T10:51:38">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" name="
+	[ GET https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST1&amp;version= ]" time="0.021"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" errors="0" tests="1" failures="0" time="0.012" timestamp="2015-05-29T10:51:38">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Firmware V2 from DM server" name="
+	[ GET https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST1&amp;version=-1 ]" time="0.012"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Upload Firmware from WEB server" errors="0" tests="1" failures="0" time="1.085" timestamp="2015-05-29T10:51:38">
+  <testcase classname="DM server API Test Suite.Frisby Test: Upload Firmware from WEB server" name="
+	[ POST https://localhost:8080/web/v2/fota/stable ]" time="1.084"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Upload Firmware from DM server" errors="0" tests="1" failures="1" time="5.093" timestamp="2015-05-29T10:51:39">
+  <testcase classname="DM server API Test Suite.Frisby Test: Upload Firmware from DM server" name="
+	[ POST https://localhost:443/dm/v2/fota/stable ]" time="5.091"><failure type="expect" message="timeout: timed out after 5000 msec waiting for HTTP Request timed out before completing">timeout: timed out after 5000 msec waiting for HTTP Request timed out before completing</failure></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Delete Firmware from WEB server" errors="0" tests="1" failures="0" time="0.885" timestamp="2015-05-29T10:51:44">
+  <testcase classname="DM server API Test Suite.Frisby Test: Delete Firmware from WEB server" name="
+	[ DELETE https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST9&amp;version=9 ]" time="0.885"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Delete Firmware from WEB server with error model_name" errors="0" tests="1" failures="1" time="5.018" timestamp="2015-05-29T10:51:45">
+  <testcase classname="DM server API Test Suite.Frisby Test: Delete Firmware from WEB server with error model_name" name="
+	[ DELETE https://localhost:8080/web/v2/fota/stable?model_name=0000000&amp;version=5 ]" time="5.015"><failure type="expect" message="Expected 500 to equal 400.">Error: Expected 500 to equal 400.
+    at new jasmine.ExpectationResult (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:114:32)
+    at null.toEqual (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1316:29)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:493:42)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2167:18)
+    at Timer.listOnTimeout (timers.js:110:15)</failure><failure type="expect" message="Error: Header &amp;apos;content-type&amp;apos; not present in HTTP response">Error: Header &amp;apos;content-type&amp;apos; not present in HTTP response
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:520:13)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2167:18)
+    at Timer.listOnTimeout (timers.js:110:15)</failure></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Delete Firmware from WEB server" errors="0" tests="1" failures="0" time="0.046" timestamp="2015-05-29T10:51:50">
+  <testcase classname="DM server API Test Suite.Frisby Test: Delete Firmware from WEB server" name="
+	[ DELETE https://localhost:8080/web/v2/fota/stable?model_name=DM_TEST9&amp;version=-1 ]" time="0.046"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Delete Firmware from DM server" errors="0" tests="1" failures="1" time="0.025" timestamp="2015-05-29T10:51:50">
+  <testcase classname="DM server API Test Suite.Frisby Test: Delete Firmware from DM server" name="
+	[ DELETE https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST9&amp;version=9 ]" time="0.023"><failure type="expect" message="Expected 400 to equal 200.">Error: Expected 400 to equal 200.
+    at new jasmine.ExpectationResult (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:114:32)
+    at null.toEqual (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1316:29)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:493:42)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at onComplete (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2173:18)
+    at jasmine.WaitsForBlock.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2659:5)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2673:12)
+    at Timer.listOnTimeout (timers.js:110:15)</failure></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Delete Firmware from DM server with error model_name" errors="0" tests="1" failures="1" time="5.006" timestamp="2015-05-29T10:51:50">
+  <testcase classname="DM server API Test Suite.Frisby Test: Delete Firmware from DM server with error model_name" name="
+	[ DELETE https://localhost:443/dm/v2/fota/stable?model_name=000000000&amp;version=2 ]" time="5.005"><failure type="expect" message="Expected 500 to equal 400.">Error: Expected 500 to equal 400.
+    at new jasmine.ExpectationResult (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:114:32)
+    at null.toEqual (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1316:29)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:493:42)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2167:18)
+    at Timer.listOnTimeout (timers.js:110:15)</failure><failure type="expect" message="Error: Header &amp;apos;content-type&amp;apos; not present in HTTP response">Error: Header &amp;apos;content-type&amp;apos; not present in HTTP response
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:520:13)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2167:18)
+    at Timer.listOnTimeout (timers.js:110:15)</failure></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Delete Firmware from DM server" errors="0" tests="1" failures="0" time="0.025" timestamp="2015-05-29T10:51:55">
+  <testcase classname="DM server API Test Suite.Frisby Test: Delete Firmware from DM server" name="
+	[ DELETE https://localhost:443/dm/v2/fota/stable?model_name=DM_TEST9&amp;version=-1 ]" time="0.025"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Device Firmware from WEB server" errors="0" tests="1" failures="0" time="0.043" timestamp="2015-05-29T10:51:55">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Device Firmware from WEB server" name="
+	[ GET https://localhost:8080/web/v2/fota/device/firmware?gid=1,2,3&amp;from=10,20&amp;size=5,5&amp;socket_id=DE7itWKqUTokJT0mAAAA ]" time="0.043"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Device Firmware from WEB server" errors="0" tests="1" failures="1" time="0.042" timestamp="2015-05-29T10:51:55">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Device Firmware from WEB server" name="
+	[ GET https://localhost:8080/web/v2/fota/device/firmware?gid=1,2,3&amp;from=10,20&amp;size=5,5&amp;socket_id=DE7itWKqUTokJT0mAAAA000 ]" time="0.042"><failure type="expect" message="Expected 200 to equal 400.">Error: Expected 200 to equal 400.
+    at new jasmine.ExpectationResult (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:114:32)
+    at null.toEqual (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1316:29)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:493:42)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at onComplete (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2173:18)
+    at jasmine.WaitsForBlock.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2659:5)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2673:12)
+    at Timer.listOnTimeout (timers.js:110:15)</failure></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Device Firmware from DM server" errors="0" tests="1" failures="0" time="0.046" timestamp="2015-05-29T10:51:55">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Device Firmware from DM server" name="
+	[ GET https://localhost:443/dm/v2/fota/device/firmware?gid=1,2,3&amp;from=10,20&amp;size=5,5&amp;socket_id=DE7itWKqUTokJT0mAAAA ]" time="0.046"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Get Device Firmware from DM server" errors="0" tests="1" failures="1" time="0.053" timestamp="2015-05-29T10:51:55">
+  <testcase classname="DM server API Test Suite.Frisby Test: Get Device Firmware from DM server" name="
+	[ GET https://localhost:443/dm/v2/fota/device/firmware?gid=1,2,3&amp;from=10,20&amp;size=5,5&amp;socket_id=DE7itWKqUTokJT0mAAAA000 ]" time="0.053"><failure type="expect" message="Expected 200 to equal 400.">Error: Expected 200 to equal 400.
+    at new jasmine.ExpectationResult (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:114:32)
+    at null.toEqual (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1316:29)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:493:42)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at onComplete (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2173:18)
+    at jasmine.WaitsForBlock.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2659:5)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2673:12)
+    at Timer.listOnTimeout (timers.js:110:15)</failure></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Update Device Firmware from WEB server" errors="0" tests="1" failures="0" time="0.055" timestamp="2015-05-29T10:51:55">
+  <testcase classname="DM server API Test Suite.Frisby Test: Update Device Firmware from WEB server" name="
+	[ PUT https://localhost:8080/web/v2/fota/device/firmware?gid=1,2,3&amp;from=10,20&amp;size=5,5&amp;socket_id=DE7itWKqUTokJT0mAAAA ]" time="0.055"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Update Device Firmware from WEB server" errors="0" tests="1" failures="1" time="0.054" timestamp="2015-05-29T10:51:56">
+  <testcase classname="DM server API Test Suite.Frisby Test: Update Device Firmware from WEB server" name="
+	[ PUT https://localhost:8080/web/v2/fota/device/firmware?gid=1,2,3&amp;from=10,20&amp;size=5,5&amp;socket_id=DE7itWKqUTokJT0mAAAA000 ]" time="0.052"><failure type="expect" message="Expected 200 to equal 400.">Error: Expected 200 to equal 400.
+    at new jasmine.ExpectationResult (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:114:32)
+    at null.toEqual (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1316:29)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:493:42)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at onComplete (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2173:18)
+    at jasmine.WaitsForBlock.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2659:5)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2673:12)
+    at Timer.listOnTimeout (timers.js:110:15)</failure></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Update Device Firmware from WEB server" errors="0" tests="1" failures="0" time="0.047" timestamp="2015-05-29T10:51:56">
+  <testcase classname="DM server API Test Suite.Frisby Test: Update Device Firmware from WEB server" name="
+	[ PUT https://localhost:8080/web/v2/fota/device/firmware?gid=&amp;from=&amp;size=&amp;socket_id= ]" time="0.046"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Update Device Firmware from DM server" errors="0" tests="1" failures="0" time="0.034" timestamp="2015-05-29T10:51:56">
+  <testcase classname="DM server API Test Suite.Frisby Test: Update Device Firmware from DM server" name="
+	[ PUT https://localhost:443/dm/v2/fota/device/firmware?gid=1,2,3&amp;from=10,20&amp;size=5,5&amp;socket_id=DE7itWKqUTokJT0mAAAA ]" time="0.034"></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Update Device Firmware from DM server" errors="0" tests="1" failures="1" time="0.035" timestamp="2015-05-29T10:51:56">
+  <testcase classname="DM server API Test Suite.Frisby Test: Update Device Firmware from DM server" name="
+	[ PUT https://localhost:443/dm/v2/fota/device/firmware?gid=1,2,3&amp;from=10,20&amp;size=5,5&amp;socket_id=DE7itWKqUTokJT0mAAAA000 ]" time="0.032"><failure type="expect" message="Expected 200 to equal 400.">Error: Expected 200 to equal 400.
+    at new jasmine.ExpectationResult (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:114:32)
+    at null.toEqual (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1316:29)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:493:42)
+    at null.&amp;lt;anonymous&amp;gt; (/home/charles/cloud/FrisbyForDM/node_modules/frisby/lib/frisby.js:1074:43)
+    at jasmine.Block.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at onComplete (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2173:18)
+    at jasmine.WaitsForBlock.execute (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2659:5)
+    at null._onTimeout (/usr/local/lib/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2673:12)
+    at Timer.listOnTimeout (timers.js:110:15)</failure></testcase>
+</testsuite>
+<testsuite name="DM server API Test Suite.Frisby Test: Update Device Firmware from DM server" errors="0" tests="1" failures="0" time="0.02" timestamp="2015-05-29T10:51:56">
+  <testcase classname="DM server API Test Suite.Frisby Test: Update Device Firmware from DM server" name="
+	[ PUT https://localhost:443/dm/v2/fota/device/firmware?gid=&amp;from=&amp;size=&amp;socket_id= ]" time="0.02"></testcase>
+</testsuite>
+</testsuites>
